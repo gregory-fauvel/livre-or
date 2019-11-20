@@ -30,6 +30,10 @@ $data = mysqli_fetch_assoc($req);
     ?>
 
  <body id="thonifond">
+    <img id="bule" src="bule.png">
+
+    <h1 id="dalle">IL ME MANQUE DES ÂMES <?php echo $_SESSION['login']?></h1>
+    <h1 id="dalle2">Meme si tu change de<br> pseudo je te retrouverais</h1>
 
 <div class="titreprofil">
   <h1 id="h1">Modifiez votre profil</h1><br>
@@ -61,7 +65,7 @@ if (isset($_POST['Modifier']))
     $login = $_POST['login'];
     $passe = $_POST['mdp'];
 
-    $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
+    $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'"; 
     $query2=mysqli_query($connexion,$requete2);
     // $query= mysqli_query($connexion,$requete2);
 
