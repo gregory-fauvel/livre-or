@@ -53,6 +53,10 @@ $connexion->close();
 	include 'barnav.php';
 
 	?>
+	<img id="eclair1" src="eclair.png">
+	<img id="eclair2" src="eclair.png">
+	<img id="eclair3" src="eclair.png">
+	<img id="tete" src="face.png">
 <div id="titreinscription">
 	<h1 id="ar-h1">Inscrivez-vous</h1>
 
