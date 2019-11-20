@@ -30,6 +30,9 @@ $data = mysqli_fetch_assoc($req);
     ?>
 
  <body id="thonifond">
+    <img src="eclair.png" id="eclair2">
+    <img src="eclair.png" id="eclair3">
+    <img src="eclair.png" id="eclair4">
     <img id="bule" src="bule.png">
 
     <h1 id="dalle">IL ME MANQUE DES ÂMES <?php echo $_SESSION['login']?></h1>
