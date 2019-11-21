@@ -1,7 +1,8 @@
 <?php
 session_start();
 $connexion = mysqli_connect("localhost","root","","livreor");
-if ( isset ($_POST['commenter'])){
+if (isset($_SESSION['login'])){
+  if ( isset ($_POST['commenter'])){
 	 $requete3="SELECT * FROM `utilisateurs` WHERE login='".$_SESSION['login']."'";
  	 $query3 = mysqli_query( $connexion,$requete3);
   	 $resultat3= mysqli_fetch_all($query3);
@@ -11,6 +12,7 @@ if ( isset ($_POST['commenter'])){
   	     $query2 = mysqli_query( $connexion,$requete2);
   	     header('location: livre-or.php');
  	}
+
 ?>
 
 <html>
@@ -18,21 +20,34 @@ if ( isset ($_POST['commenter'])){
   <link rel="stylesheet" type="text/css" href="commentaire.css">
 	<title>Page connexion</title>
 </head>
-<body>
+<body id="commentaire">
+    <header>
+  <?php
+  include 'barnav.php';
+  ?>
+  </header>
+
 <?php
 if (isset($_SESSION['login'])==true){
 ?>
+<div id="formcommentaire">
 	<form action="commentaire.php" method="post">
-
     <div>
-        <br><label for="msg"> Poster votre message :</label></br>
+        <br><label id="titrepost" for="msg"> Poster votre message :</label></br>
         <textarea id="msg" name="message"></textarea>
-        <input type="submit" name="commenter">
+        <input id="validcomment" type="submit" name="commenter">
     </div>
 </form>
+</div>
+<img id="sorciere" src="sorciere.png">
 <?php
 }
 ?>
+<?php 
+}
+else
+  echo "Vous n' êtes pas connecté";
+ ?>
 
 </body>
 </html>
