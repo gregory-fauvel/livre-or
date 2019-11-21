@@ -46,7 +46,7 @@ $connexion->close();
 
 	<title>page d'inscription</title>
 </head>
-<body id="ar-body-inscription">
+<body>
 
 	<?php
 
@@ -54,7 +54,7 @@ $connexion->close();
 
 	?>
 <div id="titreinscription">
-	<h1 id="ar-h1">Inscrivez-vous</h1>
+	<h1>Inscrivez-vous</h1>
 
 </div>
 
@@ -83,6 +83,15 @@ $connexion->close();
 						</div>
 
 
+						<footer>
+
+<div id="logo">
+	<img height="60"src="logoface.png">
+	<img class=log2 height="60"src="logotwit.png">
+
+</div>
+
+</footer>
 
 					</body>
 					</html>

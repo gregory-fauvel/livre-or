@@ -29,7 +29,7 @@ $data = mysqli_fetch_assoc($req);
     }
     ?>
 
- <body id="thonifond">
+ <body id="Alexfond">
 
 <div class="titreprofil">
   <h1 id="h1">Modifiez votre profil</h1><br>
@@ -48,7 +48,7 @@ $data = mysqli_fetch_assoc($req);
 
                      
 
-                        <input id="butprof" type="submit" name="Modifier" value ="Valider">
+                        <input type="submit" name="Modifier" value ="Valider">
 
                     </form><br>
 
@@ -64,12 +64,21 @@ if (isset($_POST['Modifier']))
     $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'";
     $query2=mysqli_query($connexion,$requete2);
     // $query= mysqli_query($connexion,$requete2);
-
-    echo "modification effectuer";
+}
+else
+{
+    echo "le if ne marche pas";
 }
 
-
 ?>
+        <footer>
 
+            <div id="logo">
+                <img height="60"src="logoface.png">
+                <img class=log2 height="60"src="logotwit.png">
+
+            </div>
+
+        </footer>
 
 </body>

@@ -1,4 +1,4 @@
-<html id="ar-html">
+<html>
 <head>
  <meta charset="utf-8">
  <!-- importer le fichier de style -->
@@ -180,7 +180,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] !== '')
 {
     $user = $_SESSION['login'];
     echo "<p id=\"ar-bonjour\">Bonjour $user, vous êtes connecté</p>";
-    echo "<a id=\"ar-deco\" href='connexion.php?deconnexion=true'><span>Déconnexion</span></a>";
+    echo "<a href='connexion.php?deconnexion=true'><span>Déconnexion</span></a>";
 }
 
 
