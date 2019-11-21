@@ -41,7 +41,7 @@ $connexion->close();
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="inscription.css">
+	<link rel="stylesheet" type="text/css" href="module.css">
 	<link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
 
 	<title>page d'inscription</title>

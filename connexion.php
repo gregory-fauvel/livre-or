@@ -3,11 +3,11 @@
  <meta charset="utf-8">
  <!-- importer le fichier de style -->
  <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="connexion.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="module.css" media="screen" type="text/css" />
 </head>
 <?php
 session_start();
-    if ($_SESSION['login'] == true)
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
     {
     include 'barnavco.php';
 }

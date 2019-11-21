@@ -5,10 +5,10 @@
 
 </head>
         <meta sharset="utf-8">
-        <link rel="stylesheet" href= "profil.css">
+        <link rel="stylesheet" href= "module.css">
 <?php
 session_start();
-if (isset ($_SESSION['login'])){
+if (isset ($_SESSION['login']) && !empty($_SESSION['login'])){
 $connexion = mysqli_connect("localhost","root","","livreor");
 $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
 $req = mysqli_query($connexion, $requete);
