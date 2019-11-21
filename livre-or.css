@@ -45,53 +45,46 @@
         color:#e7a7a7;
 
     }
-#commentaire{
-	margin: 0px;
-	background-image: url(fotocommentaire.jpg);
-	background-repeat: no-repeat;
-
-}
-#formcommentaire{
+#livreor{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
-	width:100%;
-	height:200px;
+	margin: 0px;
+	background-image: url(fotolivreor.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
 }
-#titrepost{
-	font-family: gregpolice;
+#tableau{
+	display: flex;
+	flex-direction: column;
+	margin-left: 700px;
+	align-items: center;
+	border:solid  red ;
+	overflow: auto;
+	margin-bottom: 250px;
+	height: 200px;
+	width: 400px;
+
+}
+#tablecomment{
+	font-family: 'gregpolice';
+	color: red;
+
+}
+.comment{
+	color: white;
+
+}
+#poster{
+	font-size: 25px;
+	text-decoration: none;
 	color: red;
 }
-#validcomment{
-	font-family: gregpolice;
-	color: red;
-	border-radius: 20px;
-	cursor: pointer;
-}
-#msg{
-
-	border-radius:20px;
-}
-#sorciere{
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	animation: bouge 5s infinite ;
-
-
-}
-@keyframes bouge{
-	0%{opacity: 0;}
-	1%{opacity: 0;}
-	40%{opacity:1;}
-	45%{opacity: 0;}
-	50%{opacity: 0;}
-	51%{opacity: 0;}
-	70%{opacity: 0;}
-	95%{transform: translateX(950px);}
-	99%{opacity: 0;}
-	100%{opacity: 0;}
-}
+@font-face {
+	font-family :'gregpolice';
+	src: url('DoubleFeature20.ttf') format('truetype');
+	}
 
 @font-face {
 	font-family :'gregpolice';

@@ -7,7 +7,7 @@
                         <li><a href="index.php">Bienvenue</a></li>
                         <li><a href="connexion.php">deconexion</a></li>
                         <li><a href="profil.php">Profil</a></li>
-                        <li><a href="admin.php">Admin</a></li>
+                        <li><a href="livre-or.php">Livre d'or</a></li>
                     </ul>
                 </nav>
             </div>
