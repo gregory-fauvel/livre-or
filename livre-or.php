@@ -4,14 +4,32 @@ session_start();
 
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="livre-or.css">
+  <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
   <title>page livre d or</title>
 </head>
-<body>
-<table>
+<body id="livreor">
+  <?php
+      if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
+    {
+    include 'barnavco.php';
+    }
+    else
+    {
+        include 'barnav.php';
+    }
+    ?>
+    
+    
+ 
+  <a id="poster" href="commentaire.php">Ecrire un commentaire</a> 
+    
+
+<table id="tableau">
   <tr>
-    <th>Nom</th>
-    <th>Commentaire</th>
-    <th>Date</th>
+    <th id="tablecomment">Nom</th>
+    <th id="tablecomment">Commentaire</th>
+    <th id="tablecomment">Date</th>
   </tr>
   <?php
       $connexion = mysqli_connect("localhost","root","","livreor");
@@ -24,9 +42,9 @@ session_start();
       {
       ?>
         <tr>
-          <td><?php echo $data2['login']?></td>
-          <td><?php echo $data2['commentaire']?></td>
-          <td><?php echo $data2['date']?></td>
+          <td class= "comment"><?php echo $data2['login']?></td>
+          <td class="comment"><?php echo $data2['commentaire']?></td>
+          <td class="comment"><?php echo $data2['date']?></td>
         </tr>
       <?php
       }

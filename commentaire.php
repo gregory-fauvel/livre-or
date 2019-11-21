@@ -18,14 +18,22 @@ if (isset($_SESSION['login'])){
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="commentaire.css">
+  <link rel="stylesheet" href="index.css" media="screen" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
 	<title>Page connexion</title>
 </head>
 <body id="commentaire">
-    <header>
   <?php
-  include 'barnav.php';
-  ?>
-  </header>
+      if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
+    {
+    include 'barnavco.php';
+    }
+    else
+    {
+        include 'barnav.php';
+    }
+    ?>
+ 
 
 <?php
 if (isset($_SESSION['login'])==true){
