@@ -4,12 +4,17 @@
   <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
 
 </head>
+        <meta sharset="utf-8">
+        <link rel="stylesheet" href= "profil.css">
 <?php
 session_start();
+if (isset ($_SESSION['login'])){
 $connexion = mysqli_connect("localhost","root","","livreor");
 $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
 $req = mysqli_query($connexion, $requete);
 $data = mysqli_fetch_assoc($req);
+
+
 ?>
 
     <head>
@@ -29,7 +34,7 @@ $data = mysqli_fetch_assoc($req);
     }
     ?>
 
- <body id="thonifond">
+ <body class="style1">
     <img src="eclair.png" id="eclair2">
     <img src="eclair.png" id="eclair3">
     <img src="eclair.png" id="eclair4">
@@ -74,9 +79,25 @@ if (isset($_POST['Modifier']))
 
     echo "modification effectuer";
 }
+?>
+</body>
+<?php
+}
+else {
+    ?>
+    <body class="style2">
+         <?php
+    echo "<p id=\"pprofil \">Pour acceder a la page il vous faut vous connecter!!</p> ";
+    ?>
+    <form id="profil-deco" action="index.php">
+        <input type="submit" name="bouton">
+    </body>
+       
+<?php
 
-
+}
 ?>
 
+</html>
 
-</body>
+

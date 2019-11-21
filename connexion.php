@@ -103,9 +103,10 @@ session_start();
             <input class="ar-input-co" type="text" placeholder="Entrer le nom d'utilisateur" name="login" required><br>
 
             <label class="ar-lab"><b>Password</b></label><br>
-            <input class="ar-input-co" type="text" placeholder="Entrer le mot de passe" name="password" required><br>
+            <input class="ar-input-co" type="text" placeholder="Entrer le mot de passe" name="password" required><br><br>
 
-            <input type="submit" id='submit' value='LOGIN' >
+            <br>
+            <br><input type="submit" id='submit' value='LOGIN' >
             <?php
             if(isset($_GET['erreur'])){
                 $err = $_GET['erreur'];
