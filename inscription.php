@@ -85,6 +85,12 @@ $connexion->close();
 
 						<footer>
 
+<div id="logo">
+	<img height="60"src="logoface.png">
+	<img class=log2 height="60"src="logotwit.png">
+
+</div>
+
 </footer>
 
 					</body>
