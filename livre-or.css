@@ -58,13 +58,13 @@
 #tableau{
 	display: flex;
 	flex-direction: column;
-	margin-left: 700px;
+	margin-left: 500px;
 	align-items: center;
-	border:solid  red ;
+	border:solid   black ;
 	overflow: auto;
 	margin-bottom: 250px;
 	height: 200px;
-	width: 400px;
+	width: 700px;
 
 }
 #tablecomment{
@@ -73,20 +73,21 @@
 
 }
 .comment{
+	font-family: 'gregpolice';
 	color: white;
+	width: 800px;
 
 }
 #poster{
 	font-size: 25px;
+	font-family: 'gregpolice';
 	text-decoration: none;
 	color: red;
+    margin-left: 300px;
+    margin-bottom: 100px;
 }
 @font-face {
 	font-family :'gregpolice';
 	src: url('DoubleFeature20.ttf') format('truetype');
 	}
 
-@font-face {
-	font-family :'gregpolice';
-	src: url('DoubleFeature20.ttf') format('truetype');
-	}

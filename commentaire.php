@@ -1,14 +1,14 @@
 <?php
 session_start();
+date_default_timezone_set('Europe/Paris');
 $connexion = mysqli_connect("localhost","root","","livreor");
 if (isset($_SESSION['login'])){
-  if ( isset ($_POST['commenter'])){
+  if (isset ($_POST['commenter'])){
 	 $requete3="SELECT * FROM `utilisateurs` WHERE login='".$_SESSION['login']."'";
  	 $query3 = mysqli_query( $connexion,$requete3);
-  	 $resultat3= mysqli_fetch_all($query3);
- 	 
-
-  	  $requete2="INSERT INTO commentaire (commentaire, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
+    $resultat3= mysqli_fetch_all($query3);
+    $requete2="INSERT INTO commentaire (commentaire, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
+      
   	     $query2 = mysqli_query( $connexion,$requete2);
   	     header('location: livre-or.php');
  	}
