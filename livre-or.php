@@ -5,7 +5,7 @@ date_default_timezone_set('Europe/Paris');
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="livre-or.css">
+        <link rel="stylesheet" type="text/css" href="module.css">
         <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
         <title>page livre d or</title>
     </head>
@@ -31,7 +31,7 @@ date_default_timezone_set('Europe/Paris');
                    </tr>
             <?php
                 $connexion = mysqli_connect("localhost","root","","livreor");
-                $requete3="SELECT login, commentaire,date FROM utilisateurs LEFT JOIN commentaire ON utilisateurs.id = commentaire.id_utilisateur ORDER BY commentaire.id DESC";
+                $requete3="SELECT login, commentaire,date FROM utilisateurs LEFT JOIN commentaires ON utilisateurs.id = commentaires.id_utilisateur ORDER BY commentaires.id DESC";
                 $query3=mysqli_query($connexion, $requete3);
                 $data4 = mysqli_fetch_all($query3,MYSQLI_ASSOC);
                 $taille = sizeof($data4);

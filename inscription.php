@@ -1,60 +1,57 @@
 <?php
 session_start();
-
 $connexion = mysqli_connect("localhost","root","","livreor");
 if (isset($_POST['connexion']))
 {
+	$mdp3= password_hash($_POST["mdp"], PASSWORD_DEFAULT, array('cost' => 12));
 	if ($_POST['mdp']==$_POST['mdp2'])
 	{
-		$requet="SELECT* FROM utilisateurs";
+		$requet="SELECT * FROM utilisateurs";
 		$query2=mysqli_query($connexion,$requet);
 		$resultat=mysqli_fetch_all($query2);
 		$trouve=false;
 		foreach ($resultat as $key => $value) {
-
 			if ($resultat[$key][1]==$_POST['login'])
 			{
 				echo "Login deja existant!!";
 				$trouve=true;
-
 			}
 		}
 		if ($trouve==false)
 		{
 			$sql = "INSERT INTO utilisateurs (login,password)
-			VALUES ('".$_POST['login']."','".$_POST['mdp']."')";
+			VALUES ('".$_POST['login']."','".$mdp3."')";
 			$query=mysqli_query($connexion,$sql);
 			header('Location:connexion.php');
 		}
-
 	}
 	else{
 		echo "Les mots de passe doivent etre identique!";
 	}
 }
-
 $connexion->close();
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="inscription.css">
+	<link rel="stylesheet" type="text/css" href="module.css">
 	<link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
 
 	<title>page d'inscription</title>
 </head>
-<body>
+<body id="ar-body-inscription">
 
 	<?php
-
 	include 'barnav.php';
-
 	?>
+	<img id="eclair1" src="eclair.png">
+	<img id="eclair2" src="eclair.png">
+	<img id="eclair3" src="eclair.png">
+	<img id="tete" src="face.png">
 <div id="titreinscription">
-	<h1>Inscrivez-vous</h1>
+	<h1 id="ar-h1">Inscrivez-vous</h1>
 
 </div>
 
@@ -83,9 +80,6 @@ $connexion->close();
 						</div>
 
 
-						<footer>
-
-</footer>
 
 					</body>
 					</html>

@@ -1,13 +1,13 @@
-<html>
+<html id="ar-html">
 <head>
  <meta charset="utf-8">
  <!-- importer le fichier de style -->
  <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="connexion.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="module.css" media="screen" type="text/css" />
 </head>
 <?php
 session_start();
-    if ($_SESSION['login'] == true)
+    if (isset($_SESSION['login']) && ($_SESSION['login'] == true))
     {
     include 'barnavco.php';
 }
@@ -103,9 +103,10 @@ session_start();
             <input class="ar-input-co" type="text" placeholder="Entrer le nom d'utilisateur" name="login" required><br>
 
             <label class="ar-lab"><b>Password</b></label><br>
-            <input class="ar-input-co" type="text" placeholder="Entrer le mot de passe" name="password" required><br>
+            <input class="ar-input-co" type="password" placeholder="Entrer le mot de passe" name="password" required><br><br>
 
-            <input type="submit" id='submit' value='LOGIN' >
+            <br>
+            <br><input type="submit" id='submit' value='LOGIN' >
             <?php
             if(isset($_GET['erreur'])){
                 $err = $_GET['erreur'];
@@ -143,22 +144,27 @@ if(isset($_POST['login']) && isset($_POST['password']))
 
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
     // pour éliminer toute attaque de type injection SQL et XSS
-    $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
-    $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
+    $login = $_POST['login'];
+    $password = $_POST['password'];
 
     if($login !== "" && $password !== "")
     {
         $requete = "SELECT count(*) FROM utilisateurs where
-        login = '".$login."' and password = '".$password."' ";
+        login = '".$login."' ";
         $exec_requete = mysqli_query($connexion,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
 
-        if($count!=0 && $_SESSION['login'] == "")
+        $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
+        $exec_requete4 = mysqli_query($connexion,$requete4);
+        $reponse4 = mysqli_fetch_array($exec_requete4);
+
+        if( $count!=0 && $_SESSION['login'] == "" && password_verify($password, $reponse4[2]) )
         {
 
             $_SESSION['login'] = $login;
             $user = $_SESSION['login'];
+            header('Location: connexion.php');
         }
         else
         {
@@ -168,19 +174,22 @@ if(isset($_POST['login']) && isset($_POST['password']))
    }
 }
 
+
+
+
 if(isset($_GET['deconnexion']))
-{
+ {
 
-    echo "On vous deconnecte";
+     echo "On vous deconnecte";
     session_unset();
+    header('location:index.php');
 
-}
+ }
 
-if (isset($_SESSION['login']) && $_SESSION['login'] !== '')
+ if (isset($_SESSION['login']) && $_SESSION['login'] !== '')
 {
     $user = $_SESSION['login'];
     echo "<p id=\"ar-bonjour\">Bonjour $user, vous êtes connecté</p>";
-    echo "<a href='connexion.php?deconnexion=true'><span>Déconnexion</span></a>";
 }
 
 

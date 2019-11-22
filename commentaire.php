@@ -7,7 +7,7 @@ if (isset($_SESSION['login'])){
 	 $requete3="SELECT * FROM `utilisateurs` WHERE login='".$_SESSION['login']."'";
  	 $query3 = mysqli_query( $connexion,$requete3);
     $resultat3= mysqli_fetch_all($query3);
-    $requete2="INSERT INTO commentaire (commentaire, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
+    $requete2="INSERT INTO commentaires (commentaire, id_utilisateur, date) VALUES ('".$_POST['message']."','".$resultat3[0][0]."','".date("Y-m-d H:i:s")."')";
       
   	     $query2 = mysqli_query( $connexion,$requete2);
   	     header('location: livre-or.php');
@@ -17,7 +17,7 @@ if (isset($_SESSION['login'])){
 
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="commentaire.css">
+  <link rel="stylesheet" type="text/css" href="module.css">
   <link rel="stylesheet" href="index.css" media="screen" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Trade+Winds&display=swap" rel="stylesheet">
 	<title>Page connexion</title>
@@ -41,8 +41,8 @@ if (isset($_SESSION['login'])==true){
 <div id="formcommentaire">
 	<form action="commentaire.php" method="post">
     <div>
-        <br><label id="titrepost" for="msg"> Poster votre message :</label></br>
-        <textarea id="msg" name="message"></textarea>
+        <br><label id="titrepost" for="msg"> Poster votre message max 50 caractere :</label></br>
+        <textarea maxlength="50" id="msg" name="message"></textarea>
         <input id="validcomment" type="submit" name="commenter">
     </div>
 </form>
