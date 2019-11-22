@@ -1,0 +1,235 @@
+/*profil.css*/
+.style1{
+  background: url("https://i.pinimg.com/originals/1b/4a/8c/1b4a8c109a333614e0b78ef99451e137.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.style2{
+ background: url("https://images3.alphacoders.com/442/44229.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.style2 p{
+    color: red;
+    text-align: center;
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 35%;
+    font-size: 35px;
+}
+
+#profil-deco{
+     margin-top: 20%;
+    position: absolute;
+    margin-left: 50%;
+}
+}
+#profil-else{
+    background-color: red;
+    width: 100%
+    height: 100%;
+}
+
+#bule{
+    position: absolute;
+    margin-left: 407px;
+    animation: invisible 5s;
+}
+      #eclair4{
+    position: absolute;
+    height: 698px;
+    width: 472px;
+    animation: eclair 2s infinite;
+    }
+
+    @keyframes eclair{
+        1% {opacity: 0;}
+        10% {opacity: 1;}
+        5% {opacity: 0;}
+        10% {opacity: 0;}
+        20% {opacity: 0;}
+        30% {opacity: 0;}
+        50% {opacity: 0;}
+        60% {opacity: 0;}
+        70% {opacity: 0;}
+        80% {opacity: 1;}
+
+    }
+
+     #eclair2{
+        position: absolute;
+        height: 425px;
+        width: 425px;
+        margin-left: 29%;
+        animation: eclair 3s infinite;
+    }
+
+     #eclair3{
+    position: absolute;
+    height: 816px;
+    width: 497px;
+    margin-left: -832px;
+    animation: eclair 5s infinite;
+    }
+
+@keyframes invisible{
+
+0% { opacity:0;} 
+
+100%{opacity: 1;}
+
+
+}
+
+#dalle{
+    color: red;
+    position: absolute;
+    margin-top: 159px;
+    margin-left: 1473px;
+    font-size: 20px;
+animation: invisibles 7s;
+
+}
+
+@keyframes invisibles{
+
+0% { opacity:0;} 
+
+80%{opacity: 1;}
+
+
+}
+
+#dalle2{
+    color: red;
+    position: absolute;
+    margin-top: 205px;
+    margin-left: 1487px;
+    font-size: 26px;
+    animation: invisibleF 10s;
+
+}
+@keyframes invisibleF{
+
+0% { opacity:0;} 
+50% { opacity:0;}
+100%{opacity: 1;}
+
+
+}
+
+
+  .titreprofil {
+        margin-top: 14%;
+        margin-right: 40%;
+        font-size: 40px;
+        text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
+            0 0 0.2em #87F
+    }
+
+
+    #butprof{
+
+        background-color: #2e3d36;
+            text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F;
+            font-size: 45px;
+            border-radius: 10px;
+            border:none;
+    }
+
+
+
+    .f{
+        font-size: 20px;
+        text-decoration:underline black; 
+    }
+
+#profilform{
+  font-family: 'Trade Winds', cursive;
+  color:red;
+  font-size: 25px;
+}
+    .Barrenav{
+        text-align: center;
+        background-color: black;
+        display: inline-block;
+        flex-direction: row;
+        text-align: center;
+        padding: 0%;
+        margin: auto;
+        width: 100%;
+        height: 50px;
+        font-family: 'Trade Winds', cursive;
+
+    }
+
+
+
+ #nav {
+        list-style-type: none;
+        text-align: center;
+        margin-bottom: 4%;
+        padding: 0;
+        margin-left: 0%;
+        margin-right: 20%;
+        margin: auto;
+        margin-top: 1%;
+        font-family: 'Trade Winds', cursive;
+
+    }
+
+
+ #nav li{
+        display: inline;
+        margin-right: 80px;
+        font-size: 20px;
+    }
+
+
+#nav li a{
+        padding: 5px 20px;
+        color:white;
+        text-decoration: none;
+        text-shadow: 0.2em 0.3em 0.1em greenyellow
+    }
+
+
+    #nav li :hover{
+        color:rgb(13, 241, 230);
+    }
+
+
+footer{
+    text-align: center;
+    background-color: black;
+    display: inline-block;
+    flex-direction: row;
+    text-align: center;
+    padding: 0%;
+    margin-top: 100px;
+    width: 35%;
+    height: 40px;
+    border-radius: 5px 10px 0 5px;
+}
+
+
+#logo{
+    height: 40px;
+    margin-right: 15px;
+    margin-left: 30px;
+}
+
+/*fin profil.css*/

@@ -103,7 +103,7 @@ session_start();
             <input class="ar-input-co" type="text" placeholder="Entrer le nom d'utilisateur" name="login" required><br>
 
             <label class="ar-lab"><b>Password</b></label><br>
-            <input class="ar-input-co" type="text" placeholder="Entrer le mot de passe" name="password" required><br><br>
+            <input class="ar-input-co" type="password" placeholder="Entrer le mot de passe" name="password" required><br><br>
 
             <br>
             <br><input type="submit" id='submit' value='LOGIN' >
@@ -144,18 +144,22 @@ if(isset($_POST['login']) && isset($_POST['password']))
 
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
     // pour éliminer toute attaque de type injection SQL et XSS
-    $login = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['login']));
-    $password = mysqli_real_escape_string($connexion,htmlspecialchars($_POST['password']));
+    $login = $_POST['login'];
+    $password = $_POST['password'];
 
     if($login !== "" && $password !== "")
     {
         $requete = "SELECT count(*) FROM utilisateurs where
-        login = '".$login."' and password = '".$password."' ";
+        login = '".$login."' ";
         $exec_requete = mysqli_query($connexion,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
 
-        if($count!=0 && $_SESSION['login'] == "")
+        $requete4 = "SELECT * FROM utilisateurs WHERE login='".$login."'";
+        $exec_requete4 = mysqli_query($connexion,$requete4);
+        $reponse4 = mysqli_fetch_array($exec_requete4);
+
+        if( $count!=0 && $_SESSION['login'] == "" && password_verify($password, $reponse4[2]) )
         {
 
             $_SESSION['login'] = $login;
@@ -169,15 +173,19 @@ if(isset($_POST['login']) && isset($_POST['password']))
    }
 }
 
+
+
+
 if(isset($_GET['deconnexion']))
-{
+ {
 
-    echo "On vous deconnecte";
+     echo "On vous deconnecte";
     session_unset();
+    header('location:index.php');
 
-}
+ }
 
-if (isset($_SESSION['login']) && $_SESSION['login'] !== '')
+ if (isset($_SESSION['login']) && $_SESSION['login'] !== '')
 {
     $user = $_SESSION['login'];
     echo "<p id=\"ar-bonjour\">Bonjour $user, vous êtes connecté</p>";

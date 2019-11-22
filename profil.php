@@ -71,7 +71,7 @@ if (isset($_POST['Modifier']))
 {
 
     $login = $_POST['login'];
-    $passe = $_POST['mdp'];
+    $passe = password_hash($_POST["mdp"], PASSWORD_DEFAULT, array('cost' => 12));
 
     $requete2 = "UPDATE utilisateurs SET login = '$login', password = '$passe' WHERE login = '".$_SESSION['login']."'"; 
     $query2=mysqli_query($connexion,$requete2);
